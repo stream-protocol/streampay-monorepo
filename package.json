@@ -1,0 +1,28 @@
+{
+  "name": "streampay-monorepo",
+  "version": "1.0.0",
+  "description": "Stream**Pay™** is a blockchain-based payment system built on the Solana blockchain.",
+  "packageManager": "@streampayments/streampay",
+  "main": "index.js",
+  "scripts": {
+    "test": "cross-env jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stream-protocol/streampay-monorepo.git"
+  },
+  "keywords": [
+    "platform",
+    "streampay",
+    "medusa",
+    "payments",
+    "solana",
+    "blockchain"
+  ],
+  "author": "Stream Protocol",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stream-protocol/streampay-monorepo/issues"
+  },
+  "homepage": "https://github.com/stream-protocol/streampay-monorepo#readme"
+}

@@ -8,14 +8,13 @@ Stream**Pay™** is a blockchain-based payment system built on the Solana blockc
 
 ## Table of Contents
 
-- [Features](#features)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
-- [Integration with Medusa](#integration-with-medusa)
-- [Contributing](#contributing)
-- [License](#license)
+- [StreamPay: Blockchain Payment Integration for Medusa E-commerce](#streampay-blockchain-payment-integration-for-medusa-e-commerce)
+  - [Table of Contents](#table-of-contents)
+  - [Features:](#features)
+    - [Plugins \& Packages:](#plugins--packages)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
 
 ## Features:
 
@@ -30,6 +29,12 @@ Stream**Pay™** is a blockchain-based payment system built on the Solana blockc
 - **Secure and Transparent Transaction Recording:** Ensure secure and transparent recording of all transactions on the blockchain.
 
 - **User-friendly Admin Panel:** Provide an intuitive admin panel for users to manage transactions and settings.
+
+### Plugins & Packages:
+
+- **Admin:**
+- **Admin UI:**
+- **Medusa-payment-streampay:**
 
 ## Getting Started
 
