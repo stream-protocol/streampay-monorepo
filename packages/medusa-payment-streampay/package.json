@@ -1,0 +1,70 @@
+{
+  "name": "@streampayments/medusa-payment-streampay",
+  "version": "1.0.0",
+  "description": "StreamPay payment provider for Medusa e-commerce",
+  "author": "Stream Protocol",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stream-payments/medusa-payment-streampay"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stream-protocol/medusa-payment-streampay/issues"
+  },
+  "homepage": "stream-protocol/medusa-payment-streampay#readme",
+  "scripts": {
+    "build": "babel src -d .",
+    "prepare": "cross-env NODE_ENV=production npm run build",
+    "watch": "babel -w src --out-dir . --ignore **/__tests__",
+    "test": "jest --passWithNoTests",
+    "build": "cross-env npm run clean && npm run build:server && npm run build:admin",
+    "build:server": "cross-env npm run clean && tsc -p tsconfig.json",
+    "build:admin": "cross-env medusa-admin build",
+    "prepare": "cross-env NODE_ENV=production npm run build:server && medusa-admin bundle"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/node": "^7.7.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.18.9",
+    "@babel/plugin-transform-classes": "^7.9.5",
+    "@babel/plugin-transform-instanceof": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.7.6",
+    "@babel/preset-env": "^7.7.5",
+    "@babel/register": "^7.7.4",
+    "@babel/runtime": "^7.9.6",
+    "@solana/web3.js": "1.87.6",
+    "client-sessions": "^0.8.0",
+    "cross-env": "^5.2.1",
+    "jest": "^25.5.2",
+    "medusa-test-utils": "^1.1.41"
+  },
+  "peerDependencies": {
+    "@medusajs/medusa": "^1.8.1",
+    "@solana/web3.js": "1.87.6",
+    "@solana/spl-token": "0.3.9",
+    "@solana/wallet-adapter-react": "0.15.35",
+    "@solana/wallet-standard-wallet-adapter-react": "1.1.1",
+    "@solana/wallet-adapter-walletconnect": "0.1.16",
+    "solana-encryption": "1.0.9",
+    "aws-sdk": "^2.1508.0",
+    "medusa-interfaces": "^1.3.7",
+    "react": "^18.2.0",
+    "react-router-dom": "^6.20.0",
+    "axios": "1.6.2",
+    "logger": "0.0.1",
+    "typeorm": "0.3.17"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "express": "^4.18.2",
+    "medusa-core-utils": "^1.2.0"
+  },
+  "keywords": [
+    "medusa",
+    "medusa-plugin",
+    "medusa-payment-streampay",
+    "streampay"
+  ]
+}

@@ -48,7 +48,7 @@ const plugins = [
     options: {
       autoRebuild: true,
       develop: {
-        open: process.env.OPEN_BROWSER !== "true",
+        open: process.env.OPEN_BROWSER !== "false",
       },
     },
   },
