@@ -1,8 +1,8 @@
 {
-  "name": "streampayments-backend",
+  "name": "medusa-starter-default",
   "version": "0.0.1",
   "description": "A starter for Medusa projects.",
-  "author": "Stream Protocol",
+  "author": "Medusa (https://medusajs.com)",
   "license": "MIT",
   "keywords": [
     "streampay",
@@ -24,29 +24,18 @@
     "start:custom": "cross-env npm run build && node --preserve-symlinks --trace-warnings index.js",
     "dev": "cross-env npm run build:server && medusa develop"
   },
-  "peerDependencies": {
-    "@medusajs/admin": "^7.1.7",
-    "@solana/web3.js": "1.87.6"
-  },
   "dependencies": {
-    "@medusajs/admin": "^7.1.7",
-    "@medusajs/cache-inmemory": "^1.8.10",
-    "@medusajs/cache-redis": "^1.9.0",
+    "@medusajs/admin": "7.1.8",
+    "@medusajs/cache-inmemory": "^1.8.9",
+    "@medusajs/cache-redis": "^1.8.9",
     "@medusajs/event-bus-local": "^1.9.7",
     "@medusajs/event-bus-redis": "^1.8.10",
     "@medusajs/file-local": "^1.0.2",
-    "@medusajs/medusa": "1.18.0",
-    "@medusajs/icons": "1.1.0",
-    "@solana/web3.js": "1.87.6",
-    "@solana/spl-token": "0.3.9",
-    "@solana/wallet-adapter-walletconnect": "0.1.16",
-    "@solana/wallet-standard-wallet-adapter-react": "1.1.1",
-    "@solana/wallet-adapter-react-ui": "0.9.34",
-    "@tanstack/react-query": "5.8.4",
-    "babel-preset-medusa-package": "^1.1.19",
+    "@medusajs/medusa": "1.18.1",
+    "@tanstack/react-query": "4.22.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "dotenv": "16.0.3",
+    "dotenv": "16.3.1",
     "express": "^4.18.2",
     "medusa-fulfillment-manual": "^1.1.38",
     "medusa-interfaces": "^1.3.7",
@@ -70,7 +59,7 @@
     "rimraf": "^3.0.2",
     "ts-jest": "^27.0.7",
     "ts-loader": "^9.2.6",
-    "typescript": "^5.2.2"
+    "typescript": "^4.5.2"
   },
   "jest": {
     "globals": {
@@ -97,6 +86,5 @@
     ],
     "coverageDirectory": "./coverage",
     "testEnvironment": "node"
-  },
-  "packageManager": "yarn@3.6.4"
+  }
 }

@@ -8,21 +8,15 @@ type WrapperProps = {
 }
 
 const Wrapper: React.FC<WrapperProps> = ({ paymentSession, children }) => {
-  if (!paymentSession) {
-    return <div>{children}</div>
+  const isStripe = paymentSession?.provider_id?.includes("stripe")
+
+  if (isStripe && paymentSession) {
+    return (
+      <StripeWrapper paymentSession={paymentSession}>{children}</StripeWrapper>
+    )
   }
 
-  switch (paymentSession.provider_id) {
-    case "stripe":
-      return (
-        <StripeWrapper paymentSession={paymentSession}>
-          {children}
-        </StripeWrapper>
-      )
-
-    default:
-      return <div>{children}</div>
-  }
+  return <div>{children}</div>
 }
 
 const stripeKey = process.env.NEXT_PUBLIC_STRIPE_KEY
@@ -33,15 +27,29 @@ const StripeWrapper: React.FC<WrapperProps> = ({
   children,
 }) => {
   const options: StripeElementsOptions = {
-    clientSecret: paymentSession!.data.client_secret as string | undefined,
+    clientSecret: paymentSession!.data?.client_secret as string | undefined,
+  }
+
+  if (!stripeKey) {
+    throw new Error(
+      "Stripe key is missing. Set NEXT_PUBLIC_STRIPE_KEY environment variable."
+    )
   }
 
   if (!stripePromise) {
-    return <div>{children}</div>
+    throw new Error(
+      "Stripe promise is missing. Make sure you have provided a valid Stripe key."
+    )
+  }
+
+  if (!paymentSession?.data?.client_secret) {
+    throw new Error(
+      "Stripe client secret is missing. Cannot initialize Stripe."
+    )
   }
 
   return (
-    <Elements stripe={stripePromise} options={options}>
+    <Elements options={options} stripe={stripePromise}>
       {children}
     </Elements>
   )
